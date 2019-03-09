@@ -1,0 +1,28 @@
+<div class="panel-heading">文章分类</div>
+            <div class="panel-body">
+                {% for category in category_list %}
+                    {#注意：article_set是用到了反向查询，并且count方法在这里不用再加括号#}
+                    {#基于queryset对象查询的时候article后不用加_set，只有在基于对象查询的时候才要加上#}
+                    <p>{{ category.title }}({{ category.c }})</p>
+                {% endfor %}
+            </div>
+        <div class="panel panel-warning">
+            <div class="panel-heading">文章标签</div>
+            <div class="panel-body">
+                {% for tag in tag_list %}
+                    {#注意：article_set是用到了反向查询，并且count方法在这里不用再加括号#}
+                    {#基于queryset对象查询的时候article后不用加_set，只有在基于对象查询的时候才要加上#}
+                    <p>{{ tag.title }}({{ tag.c }})</p>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">日期归档</div>
+            <div class="panel-body">
+                {% for archive in archive_list %}
+                    {#注意：article_set是用到了反向查询，并且count方法在这里不用再加括号#}
+                    {#基于queryset对象查询的时候article后不用加_set，只有在基于对象查询的时候才要加上#}
+                    <p>{{ archive.archive_ym }}({{ archive.c }})</p>
+                {% endfor %}
+            </div>
+        </div>
